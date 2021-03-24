@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nhập cân nặng
+    <input type="number" id="weight" value="">
+    <br>
+    Nhập chiều cao:
+    <input type="number" id="hight" value="">
+    <input type="button" id = "test" value="Kiểm tra chỉ số IBM">
+    <script>
+        let test = document.getElementById('test');
+        test.addEventListener('click', function kiemtra(){
+            let weight = document.getElementById('weight').value;
+            let hight = document.getElementById('hight').value;
+            weight = weight *1;
+            hight = hight *1;
+            hight /=100;
+            let chi_so_IBM = weight/(hight*hight);
+            if (chi_so_IBM <16) document.write('Gầy độ III');
+                else if(chi_so_IBM <17) document.write('Gầy độ II');
+                else if(chi_so_IBM <18.5) document.write('Gầy độ I');
+                else if(chi_so_IBM <25) document.write('Bình thường');
+                else if(chi_so_IBM <30) document.write('Thừa cân');
+                else if(chi_so_IBM <35) document.write('Béo phì độ I');
+                else if(chi_so_IBM <40) document.write(' Béo phì độ II');
+            else document.write('Béo phì độ III');
+        })
+    </script>
+</body>
+</html>
